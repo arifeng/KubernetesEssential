@@ -1,0 +1,12 @@
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: nfs-node1-test
+  namespace: default
+spec:
+  storageClassName: nfs-node1
+  accessModes:
+  - ReadWriteMany
+  resources:
+    requests:
+      storage: 1Gi
