@@ -3,4 +3,6 @@ apiVersion: storage.k8s.io/v1
 metadata:
   name: nfs-node1
 provisioner: nfs/node1
+mountOptions:
+  - vers=4.1
 reclaimPolicy: Retain
