@@ -38,7 +38,7 @@ spec:
     spec:
       serviceAccount: nfs-provisioner
       nodeSelector:
-        kubernetes.io/hostname: 'centos'  # 192.168.1.100
+        kubernetes.io/hostname: 'k8s-test-n1'  # 192.168.1.101
       containers:
         - name: nfs-provisioner
           image: quay.io/kubernetes_incubator/nfs-provisioner:latest
