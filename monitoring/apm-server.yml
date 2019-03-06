@@ -51,7 +51,7 @@ spec:
     spec:
       containers:
       - name: apm-server
-        image: registry.forensix.cn/docker/kibana:elastic-apm-server-6.5.1
+        image: registry.forensix.cn/docker/elastic/apm-server:6.5.4
         ports:
         - containerPort: 8200
           name: apm-port

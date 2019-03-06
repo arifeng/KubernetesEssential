@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: kibana
-        image: registry.forensix.cn/docker/kibana:6.5.1
+        image: registry.forensix.cn/docker/elastic/kibana:6.5.4
         env:
           - name: ELASTICSEARCH_URL
             value: http://elasticsearch:9200
