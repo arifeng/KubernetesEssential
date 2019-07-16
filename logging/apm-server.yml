@@ -5,7 +5,7 @@ metadata:
   name: apm-server-config
   labels:
     k8s-app: apm-server
-  namespace: monitoring
+  namespace: logging
 data:
   apm-server.yml: |-
     apm-server:
@@ -18,9 +18,9 @@ data:
         codec: best_compression
     setup.dashboards.enabled: true
     setup.kibana:
-      host: "kibana.logging"
+      host: "kibana"
     output.elasticsearch:
-      hosts: ["elasticsearch.logging"]
+      hosts: ["elasticsearch"]
       indices:
         - index: "apm-%{[beat.version]}-sourcemap"
           when.contains:
@@ -39,7 +39,7 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: apm-server
-  namespace: monitoring
+  namespace: logging
 spec:
   # this replicas value is default
   # modify it according to your case
@@ -76,7 +76,7 @@ metadata:
   name: apm-server
   labels:
     app: apm-server
-  namespace: monitoring
+  namespace: logging
 spec:
   selector:
     app: apm-server
